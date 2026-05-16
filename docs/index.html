@@ -4,84 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ドキュメント一覧</title>
+  <link rel="stylesheet" href="css/base.css">
   <style>
-    :root {
-      --text: #212121;
-      --sub: #616161;
-      --border: #E0E0E0;
-      --bg: #FAFAFA;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--text);
-      background: var(--bg);
-      padding: 20px 16px 48px;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    header {
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 12px;
-      margin-bottom: 32px;
-    }
-    header h1 {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--text);
-    }
-    .section {
-      margin-bottom: 32px;
-    }
-    .section-title {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
-    }
-    .doc-list {
-      list-style: none;
-      padding: 0;
-    }
-    .doc-list li {
-      margin-bottom: 0;
-    }
-    .doc-list a {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 14px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      margin-bottom: 8px;
-      text-decoration: none;
-      color: var(--text);
-      background: #fff;
-      transition: border-color 0.15s;
-    }
-    .doc-list a:hover {
-      border-color: #999;
-    }
-    .doc-list .doc-name {
-      font-weight: 500;
-      font-size: 14px;
-    }
-    .doc-list .doc-arrow {
-      color: var(--sub);
-      font-size: 16px;
-    }
-    footer {
-      margin-top: 40px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--sub);
-    }
+    header { border-bottom-color: var(--border); margin-bottom: 32px; }
   </style>
 </head>
 <body>

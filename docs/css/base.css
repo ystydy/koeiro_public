@@ -1,0 +1,167 @@
+/* ------------------------------------------------------------------ */
+/* Defaults = KoeColor / purple theme.                                  */
+/* Override --accent, --th-bg, --important-bg, --important-border       */
+/* and --app-name-letter-spacing per page as needed.                    */
+/* ------------------------------------------------------------------ */
+:root {
+  --text:                  #212121;
+  --sub:                   #616161;
+  --border:                #E0E0E0;
+  --bg:                    #FAFAFA;
+  --warn-bg:               #FFF8E1;
+  --warn-border:           #FFB300;
+  --accent:                #673AB7;
+  --th-bg:                 #EDE7F6;
+  --th-color:              var(--accent);
+  --important-bg:          #FCE4EC;
+  --important-border:      #EF9A9A;
+  --app-name-letter-spacing: 1px;
+}
+
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Body — font-family by lang attribute */
+html[lang="ja"] body { font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif; }
+html[lang="en"] body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+body {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--bg);
+  padding: 20px 16px 48px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+header .app-name {
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: var(--app-name-letter-spacing);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+header h1 { font-size: 22px; font-weight: 700; color: var(--text); }
+header .date { font-size: 12px; color: var(--sub); margin-top: 6px; }
+
+/* Headings */
+h2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 28px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+h3 { font-size: 13px; font-weight: 700; color: var(--text); margin: 16px 0 8px; }
+
+/* Text */
+p { margin-bottom: 10px; }
+ul, ol { padding-left: 20px; margin-bottom: 10px; }
+li { margin-bottom: 4px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; margin-bottom: 14px; font-size: 13px; }
+th {
+  background: var(--th-bg);
+  color: var(--th-color);
+  font-weight: 600;
+  padding: 8px 10px;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+td { padding: 7px 10px; border: 1px solid var(--border); vertical-align: top; }
+tr:nth-child(even) td { background: #F5F5F5; }
+
+/* Info boxes */
+.warning {
+  background: var(--warn-bg);
+  border-left: 4px solid var(--warn-border);
+  border-radius: 4px;
+  padding: 12px 14px;
+  margin-bottom: 24px;
+  font-size: 12px;
+  color: #5D4037;
+}
+.note {
+  background: var(--warn-bg);
+  border-left: 4px solid var(--warn-border);
+  border-radius: 4px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  font-size: 12px;
+  color: #5D4037;
+}
+.important {
+  background: var(--important-bg);
+  border: 1px solid var(--important-border);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+.ai-note {
+  background: #E3F2FD;
+  border: 1px solid #90CAF9;
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  font-size: 13px;
+  color: #4527A0;
+}
+.contact-box {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--sub);
+}
+
+/* Index page */
+.section { margin-bottom: 32px; }
+.section-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.doc-list { list-style: none; padding: 0; }
+.doc-list li { margin-bottom: 0; }
+.doc-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: var(--text);
+  background: #fff;
+  transition: border-color 0.15s;
+}
+.doc-list a:hover { border-color: #999; }
+.doc-list .doc-name { font-weight: 500; font-size: 14px; }
+.doc-list .doc-arrow { color: var(--sub); font-size: 16px; }

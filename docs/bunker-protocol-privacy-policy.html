@@ -19,46 +19,52 @@
 <header>
   <div class="app-name">BUNKER PROTOCOL: Reactor Core</div>
   <h1>プライバシーポリシー</h1>
-  <div class="date">最終更新日：2026年05月08日</div>
+  <div class="date">最終更新日：2026年05月27日</div>
 </header>
 
 <p>本プライバシーポリシー（以下「本ポリシー」）は、開発者（以下「開発者」）が提供するモバイルアプリケーション「BUNKER PROTOCOL: Reactor Core」（以下「本アプリ」）において、ユーザーの情報をどのように取得・利用・管理するかを定めるものです。本アプリをご利用いただく前に必ずお読みください。</p>
 
 <h2>1. 取得する情報</h2>
 
-<p>本アプリはオフラインで動作する単独プレイのパズルゲームです。アカウント登録・オンライン機能はなく、個人を特定できる情報（氏名・メールアドレス・電話番号等）は一切取得しません。</p>
+<p>本アプリはオフラインでも動作する単独プレイのパズルゲームです。アカウント登録は不要であり、氏名・メールアドレス・電話番号等、個人を直接特定できる情報は一切取得しません。</p>
 
 <h3>1-1. アプリが自動的に取得する情報</h3>
 <table>
   <tr><th>情報の種類</th><th>内容</th></tr>
   <tr><td>端末情報</td><td>OS種別・バージョン、アプリバージョン、言語設定</td></tr>
   <tr><td>広告識別子</td><td>IDFA（iOS）・GAID（Android）等、広告配信SDKが収集する広告識別子</td></tr>
-  <tr><td>利用ログ</td><td>アプリの操作ログ・クラッシュログ・パフォーマンス情報（Firebase Analytics / Crashlytics）</td></tr>
+  <tr><td>利用ログ</td><td>アプリの操作ログ・パズル進捗（Firebase Analytics）</td></tr>
+  <tr><td>クラッシュ情報</td><td>アプリのクラッシュレポート・エラーログ（Firebase Crashlytics）</td></tr>
+  <tr><td>匿名ユーザーID</td><td>ランキング・クラウドセーブのために Firebase Authentication が発行するランダムなID（氏名等とは紐付かない）</td></tr>
+  <tr><td>ゲームの進捗データ</td><td>クリア時間・パズル解決状況・取得バッジ等（Firebase Firestore に保存）</td></tr>
 </table>
 
-<div class="important">本アプリはアカウント機能・ランキング機能・クラウドセーブを持たないため、個人を直接特定できる情報は取得しません。</div>
+<div class="important">本アプリは氏名・メールアドレス・電話番号等、個人を直接特定できる情報は取得しません。Firebase が発行する匿名IDはランダムに生成されるものであり、個人情報とは紐付きません。</div>
 
 <h2>2. 利用目的</h2>
 <table>
   <tr><th>利用目的</th><th>対象データ</th></tr>
   <tr><td>広告の配信・最適化</td><td>広告識別子、端末情報</td></tr>
   <tr><td>アプリの改善・バグ修正</td><td>クラッシュログ、利用ログ、パフォーマンス情報</td></tr>
-  <tr><td>Firebase Analytics によるアプリ利用状況の分析</td><td>利用ログ、端末情報</td></tr>
+  <tr><td>アプリ利用状況の分析</td><td>利用ログ、端末情報（Firebase Analytics）</td></tr>
+  <tr><td>ランキング・クラウドセーブ機能の提供</td><td>匿名ユーザーID、ゲーム進捗データ（Firebase Firestore）</td></tr>
 </table>
 
 <h2>3. 第三者提供・利用するサービス</h2>
 <p>本アプリは以下の第三者サービスを利用します。各サービスのプライバシーポリシーも合わせてご確認ください。</p>
 
 <h3>3-1. Firebase（Google LLC）</h3>
-<p>アプリの分析・クラッシュレポートに Firebase を使用します。</p>
+<p>アプリの分析・クラッシュレポート・データ保存に Firebase を使用します。</p>
 <ul>
   <li>Firebase Analytics（利用状況分析）</li>
   <li>Firebase Crashlytics（クラッシュレポート）</li>
+  <li>Firebase Authentication（匿名ログイン・ユーザーID発行）</li>
+  <li>Firebase Firestore（ゲーム進捗・ランキングデータの保存）</li>
 </ul>
 <p><a href="https://policies.google.com/privacy" target="_blank">Google のプライバシーポリシー</a></p>
 
 <h3>3-2. Google AdMob（Google LLC）</h3>
-<p>広告表示のために Google AdMob を使用します。AdMob は端末情報・広告識別子を収集し、パーソナライズ広告の配信に利用する場合があります。</p>
+<p>ヒント機能の広告表示のために Google AdMob を使用します。AdMob は端末情報・広告識別子を収集し、パーソナライズ広告の配信に利用する場合があります。</p>
 <p><a href="https://policies.google.com/privacy" target="_blank">Google のプライバシーポリシー</a></p>
 
 <h3>3-3. 法的要請</h3>
@@ -67,15 +73,16 @@
 <h2>4. データの保存期間・削除</h2>
 <table>
   <tr><th>データ種別</th><th>保存場所</th><th>削除方法</th></tr>
-  <tr><td>ゲームの進行データ</td><td>端末内（ローカル）</td><td>アプリのアンインストールで削除</td></tr>
+  <tr><td>設定データ</td><td>端末内（ローカル）</td><td>アプリのアンインストールで削除</td></tr>
+  <tr><td>ゲームの進捗・ランキングデータ</td><td>Firebase Firestore（クラウド）</td><td>お問い合わせ先にご連絡いただければ削除します</td></tr>
   <tr><td>クラッシュログ・分析データ</td><td>Firebase（クラウド）</td><td>Firebase のデータ保持ポリシーに準じます</td></tr>
 </table>
 
 <h2>5. ユーザーの権利</h2>
 <ul>
   <li><strong>広告のパーソナライズ設定：</strong>iOS設定の「プライバシーとセキュリティ」→「トラッキング」から広告識別子の利用を制限できます。Android はGoogle設定から広告IDをリセット・削除できます。</li>
+  <li><strong>クラウドデータの削除：</strong>Firestore に保存されたゲームデータ・ランキングデータの削除をご希望の場合は、下記連絡先までお問い合わせください。</li>
   <li><strong>同意の撤回：</strong>本アプリの利用を停止しアンインストールすることで、データ収集への同意を撤回できます。</li>
-  <li><strong>お問い合わせ：</strong>下記連絡先よりご連絡ください。</li>
 </ul>
 
 <h2>6. セキュリティ</h2>
